@@ -1,12 +1,43 @@
+'use client'
+import { useState } from "react";
 import "./login.css"
-export default function Home() {
+
+export default function Login(email,password) {
+
+    const [state, setState] = useState({
+        email: "",
+        password: ""
+    });
+
+    const handleChange = (event) => {
+        const { name, value } = event.target;
+        setState({
+            ...state,
+            [name]: value
+        })
+    }
+
     return (
-      <div className="container">
-        <label >Corre electrónico:</label>
-        <input type="text" name="usuario" class="input" placeholder="pedro122@gmail.com" required></input>
-        <label>Contraseña:</label>
-        <input type="password" name="contraseña" required></input>
-        <button type="submit">Iniciar sesión</button>
-      </div>
+        <div className="container">
+
+            <input 
+                onChange={handleChange} 
+                name="email" 
+                value={state.email} 
+                type="text" 
+                placeholder="email" 
+            />
+
+            <input 
+                name="password" 
+                onChange={handleChange} 
+                type="password" 
+                placeholder="123456" 
+            />
+
+            <button>Login</button>
+
+        </div>
     )
-  }
+
+}

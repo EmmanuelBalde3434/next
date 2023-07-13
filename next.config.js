@@ -1,3 +1,5 @@
+const { initialize } = require('next/dist/server/lib/render-server')
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {}
 
@@ -12,4 +14,4 @@ module.exports = {
         ZAPATITOS_APPID: "1:747930257433:web:c4d2b66c9e12e54c128288",
         ZAPATITOS_MEASUREMENTID: "G-TR48VPPYFY"
     }
-}
+} 
